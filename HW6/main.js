@@ -51,10 +51,10 @@ function getAverageMark(student) {
 
 // Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). ПОвинна бути виведена інформація: курс, ім'я, середня оцінка.
 function getStudentInfo(student) {
-  return Object.assign({
-    Course: student.course,
-    Name: student.name,
-    AvarageMark: getAverageMark(student),
+  return Object({
+    course: student.course,
+    name: student.name,
+    avarageMark: getAverageMark(student),
   });
 }
 
@@ -78,8 +78,8 @@ console.log(getStudentInfo(students[0]));
 console.log(getBestStudent(students));
 console.log(getStudentsNames(students));
 
-document.writeln(`Функція №1: ${getSubjects(students[0])} <br>`)
-document.writeln(`Функція №2: ${getAverageMark(students[0])} <br> `)
+document.writeln(`Функція №1: ${getSubjects(students[0])} <br>`);
+document.writeln(`Функція №2: ${getAverageMark(students[0])} <br> `);
 document.writeln(`Функція №3: ${getStudentInfo(students[0])}<br>`);
 document.writeln(`Функція №4: ${getBestStudent(students)}<br>`);
 document.writeln(`Функція №5: ${getStudentsNames(students)}<br>`);
