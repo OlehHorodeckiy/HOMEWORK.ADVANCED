@@ -51,7 +51,7 @@ function getAverageMark(student) {
 
 // Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). ПОвинна бути виведена інформація: курс, ім'я, середня оцінка.
 function getStudentInfo(student) {
-  return Object({
+  return ({
     course: student.course,
     name: student.name,
     avarageMark: getAverageMark(student),
@@ -71,15 +71,27 @@ function getStudentsNames(students) {
   const studentsNames = students.map((student) => student.name);
   return studentsNames.sort();
 }
+// Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.
+const calculateWordLetters = (word) => {
+  const wordLowerCased = word.toLowerCase().split('');
+  const result = {};
+
+  wordLowerCased.map(item => !result[item] ? result[item] = 1 : result[item]++);
+
+  return result;
+}
+
 
 console.log(getSubjects(students[0]));
 console.log(getAverageMark(students[0]));
 console.log(getStudentInfo(students[0]));
 console.log(getBestStudent(students));
 console.log(getStudentsNames(students));
+console.log(calculateWordLetters("Тест"));
 
 document.writeln(`Функція №1: ${getSubjects(students[0])} <br>`);
 document.writeln(`Функція №2: ${getAverageMark(students[0])} <br> `);
 document.writeln(`Функція №3: ${getStudentInfo(students[0])}<br>`);
 document.writeln(`Функція №4: ${getBestStudent(students)}<br>`);
 document.writeln(`Функція №5: ${getStudentsNames(students)}<br>`);
+document.writeln(`Функція №6: ${calculateWordLetters("Тест")}<br>`);
