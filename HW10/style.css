@@ -1,0 +1,10 @@
+body{
+    background: rgb(169, 221, 178);
+}
+#box {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+}
